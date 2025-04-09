@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Report Page</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+</head>
+<body>
+
+    <header>
+        <nav class="navbar">
+            <img src="img/logo.png" alt="Logo" class="logo">
+            <input type="text" placeholder="Search..." class="search-bar">
+            <ul class="nav-menu">
+                <li class="nav-item"><a href="#" class="nav-link">Home</a></li>
+                <li class="nav-item"><a href="#" class="nav-link">News</a></li>
+                <li class="nav-item"><a href="#" class="nav-link">Reports</a></li>
+                <li class="nav-item"><a href="#" class="nav-link">Settings</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main class="main-content">
+        <aside class="sidebar">
+            <ul class="sidebar-menu">
+                <li class="sidebar-item"><button class="report-btn">Report</button></li>
+                <li class="sidebar-item"><button class="claim-btn">Claim</button></li>
+            </ul>
+        </aside>
+
+        <!-- full_name, age, gender, height, weight, last_seen_location, last_seen_date, photo_url, status -->
+        <article class="form-article">
+            <h1>Report Form</h1>
+            <form id="report-form" class="report-form">
+                <label name="full-name">Full Name:</label>
+                <input class="input-form" id="name-input" type="text" name="full_name" required>
+
+                <label name="age">Age:</label>
+                <input class="input-form" id="age-input" type="number" name="age" required>
+
+                <label name="gender">Gender</label>
+                <div class="radio-container">
+                    <label><input class="radio-item" type="radio" name="gender" value="Male">Pria</label>
+                    <label><input class="radio-item" type="radio" name="gender" value="Female">Wanita</label>
+                </div>
+
+                <label>Height</label>
+                <input class="input-form" id="age-input" type="number" name="height" required>
+
+                <label>Weight</label>
+                <input class="input-form" id="weight-input" type="number" name="weight" required>
+
+                <label>Last Seen Location</label>
+                <input class="input-form" id="last-seen-location-input" type="text" name="last_seen_location" required>
+
+                <label>Last Seen Date</label>
+                <input class="input-form" id="last-seen-date-input" type="date" name="last_seen_date" required>
+
+                <!-- <label>Description</label>
+                <textarea class="input-form" id="description-input" name="description" rows="4" required></textarea> -->
+
+                <label>Photo</label>
+                <input class="input-file" id="photo-input" type="file" name="photo_url" accept="image/*" required>
+
+
+                <button id="submit" class="submit-btn" type="submit">Submit</button>
+            </form>
+        </article>
+    </main>
+    <script src="script.js"></script>
+</body>
+</html>
