@@ -33,19 +33,17 @@ router.post('/', upload.single('photo_url'), (req, res) => {
 });
 
 router.get('/', (req, res) => {
-    db.query('SELECT * FROM found_persons', (err, results) => {
+    db.query('SELECT found_location, status, created_at FROM found_persons', (err, results) => {
         if (err) {
             return res.status(500).json({ error: 'Database query error', details: err });
         }
 
         if (results.length === 0) {
-            return res.status(404).json({ message: "You haven't reported any found person yet." });
+            return res.json({ message: "You haven't reported any found person yet." });
         }
 
-        res.json({ results });
+        res.json( results );
     });
 });
-
-
 
 module.exports = router;
