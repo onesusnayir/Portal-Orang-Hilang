@@ -75,7 +75,9 @@ document.getElementById('missing-person-form').addEventListener('submit', async 
     const form = e.target;
     const formData = new FormData(form);
 
+    const user_id = 1; // Ganti dengan ID pengguna yang sesuai
     const missingPersonData = {
+      user_id: user_id,
       full_name: formData.get('full_name'),
       age: formData.get('age'),
       gender: formData.get('gender'),
@@ -124,7 +126,9 @@ document.getElementById('found-person-form').addEventListener('submit', async fu
     const formData = new FormData(form);
 
     // found_location, found_date, description
+    const user_id = 1; // Ganti dengan ID pengguna yang sesuai
     const foundPersonData = {
+      user_id: user_id,
       found_location: formData.get('found_location'),
       found_date: formData.get('found_date'),
       description: formData.get('description'),

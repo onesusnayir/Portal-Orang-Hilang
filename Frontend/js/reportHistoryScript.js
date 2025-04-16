@@ -31,8 +31,10 @@ async function missingPerson(){
         claimBtn.classList.remove('sidebar-btn-active');
 
         const tbody = document.getElementById("missing-person-table").getElementsByTagName("tbody")[0];
+
+        const user_id = 1; // Ganti dengan ID user yang sesuai
     
-        const missingPersonResult = await axios.get('http://localhost:3000/missing-persons',  {
+        const missingPersonResult = await axios.get(`http://localhost:3000/missing-persons/${user_id}`,  {
             headers: {
                 'Content-Type': 'application/json'
             }
@@ -117,7 +119,9 @@ async function foundPerson() {
 
         const tbody = document.getElementById("found-person-table").getElementsByTagName("tbody")[0];
     
-        const foundPersonResult = await axios.get('http://localhost:3000/found-persons',  {
+        const user_id = 1; // Ganti dengan ID user yang sesuai
+
+        const foundPersonResult = await axios.get(`http://localhost:3000/found-persons/${user_id}`,  {
             headers: {
                 'Content-Type': 'application/json'
             }
